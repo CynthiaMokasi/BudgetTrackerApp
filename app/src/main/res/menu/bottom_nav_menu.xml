@@ -1,0 +1,40 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:title="Home"
+        android:icon="@android:drawable/ic_menu_view"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/navigation_add"
+        android:title="Add"
+        android:icon="@android:drawable/ic_input_add"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/navigation_view"
+        android:title="View"
+        android:icon="@android:drawable/ic_menu_agenda"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/navigation_totals"
+        android:title="Totals"
+        android:icon="@android:drawable/ic_menu_sort_by_size"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/navigation_goals"
+        android:title="Goals"
+        android:icon="@android:drawable/ic_menu_myplaces"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_logout"
+        android:title="Logout"
+        android:icon="@android:drawable/ic_lock_power_off"
+        app:showAsAction="never" />
+
+</menu>
