@@ -28,4 +28,9 @@
         android:name="com.example.budgettrackerapp.ui.goals.GoalsFragment"
         android:label="Goals" />
 
+    <fragment
+        android:id="@+id/navigation_achievements"
+        android:name="com.example.budgettrackerapp.ui.achievements.AchievementsFragment"
+        android:label="Achievements" />
+
 </navigation>

@@ -26,6 +26,10 @@ class MainActivity : AppCompatActivity() {
         // Attach navigation
         binding.navView.setupWithNavController(navController)
 
+        // Create notification channel and schedule daily reminders
+        com.example.budgettrackerapp.data.NotificationManager.createNotificationChannel(this)
+        com.example.budgettrackerapp.data.NotificationManager.scheduleExpenseReminder(this)
+
         // IMPORTANT: override bottom nav clicks
         binding.navView.setOnItemSelectedListener { item ->
 

@@ -1,34 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:paddingTop="100dp"
-    android:paddingLeft="24dp"
-    android:paddingRight="24dp">
+    android:paddingTop="100dp">
 
-    <Button
-        android:id="@+id/btnAddExpense"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Add Expense" />
+        android:orientation="vertical"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp"
+        android:paddingBottom="24dp">
 
-    <Button
-        android:id="@+id/btnViewExpenses"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="View Expenses" />
+        <Button
+            android:id="@+id/btnAddExpense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add Expense" />
 
-    <Button
-        android:id="@+id/btnTotals"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Category Totals"/>
+        <Button
+            android:id="@+id/btnViewExpenses"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="View Expenses" />
 
-    <Button
-        android:id="@+id/btnGoals"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Goals" />
+        <Button
+            android:id="@+id/btnTotals"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Category Totals"/>
 
-</LinearLayout>
+        <Button
+            android:id="@+id/btnGoals"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Goals" />
+
+        <Button
+            android:id="@+id/btnAchievements"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Achievements" />
+
+    </LinearLayout>
+</ScrollView>

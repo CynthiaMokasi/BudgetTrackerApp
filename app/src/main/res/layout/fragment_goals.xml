@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:paddingTop="100dp"
-    android:paddingLeft="24dp"
-    android:paddingRight="24dp">
+    android:paddingTop="100dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp"
+        android:paddingBottom="24dp">
 
     <EditText
         android:id="@+id/etMin"
@@ -28,5 +33,132 @@
     <TextView
         android:id="@+id/tvResult"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-</LinearLayout>
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:id="@+id/tvBudgetSummary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Budget summary"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp" />
+
+    <ProgressBar
+        android:id="@+id/progressBarStatus"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="16dp"
+        android:layout_marginTop="8dp"
+        android:progress="0"
+        android:max="100" />
+
+    <TextView
+        android:id="@+id/tvPerformanceStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Performance status"
+        android:textSize="14sp"
+        android:layout_marginTop="8dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#DDDDDD"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:id="@+id/tvSavingsTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Savings Goal Tracker"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="12dp" />
+
+    <EditText
+        android:id="@+id/etGoalName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Goal name" />
+
+    <EditText
+        android:id="@+id/etGoalTarget"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Target amount"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/etSavedAmount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Current saved amount"
+        android:inputType="numberDecimal" />
+
+    <Button
+        android:id="@+id/btnSaveGoal"
+        android:text="Save Goal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tvSavingsSummary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Savings summary"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp" />
+
+    <ProgressBar
+        android:id="@+id/savingsProgressBar"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="16dp"
+        android:layout_marginTop="8dp"
+        android:progress="0"
+        android:max="100" />
+
+    <TextView
+        android:id="@+id/tvSavingsStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Savings progress status"
+        android:textSize="14sp"
+        android:layout_marginTop="8dp" />
+
+    <LinearLayout
+        android:id="@+id/savingsGoalListContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="12dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#DDDDDD"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:id="@+id/tvBadgesTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Rewards"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="12dp" />
+
+    <LinearLayout
+        android:id="@+id/badgeContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" />
+
+    </LinearLayout>
+</ScrollView>

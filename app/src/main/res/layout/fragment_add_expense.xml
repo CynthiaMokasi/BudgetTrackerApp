@@ -1,43 +1,48 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-
-    android:paddingTop="100dp"
-    android:paddingLeft="24dp"
-    android:paddingRight="24dp"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:paddingTop="100dp">
 
-    <EditText
-        android:id="@+id/etTitle"
-        android:hint="Title"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp"
+        android:paddingBottom="24dp">
 
-    <EditText
-        android:id="@+id/etAmount"
-        android:hint="Amount"
-        android:inputType="numberDecimal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        <EditText
+            android:id="@+id/etTitle"
+            android:hint="Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 
-    <!-- ✅ CATEGORY DROPDOWN -->
-    <Spinner
-        android:id="@+id/spinnerCategory"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        <EditText
+            android:id="@+id/etAmount"
+            android:hint="Amount"
+            android:inputType="numberDecimal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 
-    <!-- ✅ DATE PICKER FIELD -->
-    <EditText
-        android:id="@+id/etDate"
-        android:hint="Select Date"
-        android:focusable="false"
-        android:clickable="true"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        <!-- ✅ CATEGORY DROPDOWN -->
+        <Spinner
+            android:id="@+id/spinnerCategory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 
-    <Button
-        android:id="@+id/btnSave"
-        android:text="Save"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-</LinearLayout>
+        <!-- ✅ DATE PICKER FIELD -->
+        <EditText
+            android:id="@+id/etDate"
+            android:hint="Select Date"
+            android:focusable="false"
+            android:clickable="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/btnSave"
+            android:text="Save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+</ScrollView>

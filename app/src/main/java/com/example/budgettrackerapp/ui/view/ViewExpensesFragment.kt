@@ -52,9 +52,11 @@ class ViewExpensesFragment : Fragment() {
                             setBackgroundColor(Color.LTGRAY)
                         }
 
+                        val dateText = java.text.SimpleDateFormat("d/M/yyyy", java.util.Locale.getDefault()).format(java.util.Date(expense.timestamp))
+
                         val expenseText = TextView(requireContext()).apply {
                             text =
-                                "${expense.title}\nR${expense.amount}\n${expense.category}\n${expense.date}"
+                                "${expense.description ?: ""}\nR${expense.amount}\n${expense.category}\n${dateText}"
                             textSize = 16f
                             setTextColor(Color.BLACK)
                         }

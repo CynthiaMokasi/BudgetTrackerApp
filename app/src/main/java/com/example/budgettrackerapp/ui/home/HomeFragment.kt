@@ -43,6 +43,10 @@ class HomeFragment : Fragment() {
         binding.btnGoals.setOnClickListener {
             navigateSafely(R.id.navigation_goals)
         }
+
+        binding.btnAchievements.setOnClickListener {
+            navigateSafely(R.id.navigation_achievements)
+        }
     }
 
     private fun navigateSafely(destinationId: Int) {

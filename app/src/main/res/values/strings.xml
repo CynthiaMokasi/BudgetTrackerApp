@@ -4,7 +4,9 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="category_totals_title">Category Totals</string>
-    <string name="category_totals">
+    <string name="category_totals" formatted="false">
     Food: R%.2f\nTransport: R%.2f\nEntertainment: R%.2f\nBills: R%.2f\nOther: R%.2f
 </string>
+    <string name="min_goal">Min Goal</string>
+    <string name="max_goal">Max Goal</string>
 </resources>

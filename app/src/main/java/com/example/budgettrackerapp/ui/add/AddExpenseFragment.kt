@@ -5,10 +5,14 @@ import android.os.Bundle
 import android.view.*
 import android.widget.*
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import com.example.budgettrackerapp.R
 import com.example.budgettrackerapp.data.*
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import java.text.SimpleDateFormat
 import java.util.*
-import java.util.concurrent.Executors
 
 class AddExpenseFragment : Fragment() {
 
@@ -28,6 +32,7 @@ class AddExpenseFragment : Fragment() {
         val btnSave = view.findViewById<Button>(R.id.btnSave)
 
         val db = AppDatabase.getDatabase(requireContext())
+        val badgeRepository = BadgeRepository.getInstance(requireContext())
 
         val categories = arrayOf("Food", "Transport", "Entertainment", "Bills", "Other")
         categorySpinner.adapter = ArrayAdapter(
@@ -54,20 +59,45 @@ class AddExpenseFragment : Fragment() {
         }
 
         btnSave.setOnClickListener {
+            val desc = title.text.toString().takeIf { it.isNotBlank() }
+            val amt = amount.text.toString().toDoubleOrNull() ?: 0.0
+            val category = categorySpinner.selectedItem.toString()
+
+            val timestamp = try {
+                val txt = dateField.text.toString()
+                if (txt.isBlank()) System.currentTimeMillis()
+                else SimpleDateFormat("d/M/yyyy", Locale.getDefault()).parse(txt)?.time ?: System.currentTimeMillis()
+            } catch (e: Exception) {
+                System.currentTimeMillis()
+            }
 
             val expense = Expense(
-                title = title.text.toString(),
-                amount = amount.text.toString().toDouble(),
-                category = categorySpinner.selectedItem.toString(),
-                date = dateField.text.toString()
+                amount = amt,
+                category = category,
+                timestamp = timestamp,
+                description = desc
             )
 
-            Executors.newSingleThreadExecutor().execute {
-                db.expenseDao().insert(expense)
+            lifecycleScope.launch {
+                withContext(Dispatchers.IO) {
+                    db.expenseDao().insert(expense)
+
+                    // Award "First Step" badge if this is the first expense
+                    val expenseCount = db.expenseDao().getAll().size
+                    if (expenseCount == 1) {
+                        badgeRepository.awardBadge(
+                            Badge(name = "First Step", description = "Added your first expense")
+                        )
+                    }
+
+                    // Award "Consistent Logger" badge on every expense added
+                    badgeRepository.awardBadge(
+                        Badge(name = "Consistent Logger", description = "Logged spending activity")
+                    )
+                }
 
                 activity?.runOnUiThread {
                     Toast.makeText(context, "Saved!", Toast.LENGTH_SHORT).show()
-
                     title.setText("")
                     amount.setText("")
                     dateField.setText("")
