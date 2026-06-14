@@ -35,6 +35,9 @@ Project Structure
     Database Access Objects
     Room entities
     Database setup
+    Archievements
+    Goals
+    Graph
 
  Installation
 
