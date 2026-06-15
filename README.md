@@ -61,7 +61,7 @@ Logout clears session and returns user to login screen.
 
 YouTube video for prototype/app is below:
 
-https://youtu.be/tPqGyInOAhU
+https://youtu.be/NoaWdHOHRVw
 
 
 Author
