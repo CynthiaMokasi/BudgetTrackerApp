@@ -38,6 +38,7 @@ Project Structure
     Archievements
     Goals
     Graph
+    uploading images and save
 
  Installation
 
@@ -51,7 +52,7 @@ https://github.com/CynthiaMokasi/BudgetTrackerApp.git
 
 
 2: APK Install
--budget-tracker-app-apk is under readme.md file.
+app-Tracker.apk is under readme.md file.
 
 Logout Feature
 
